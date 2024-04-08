@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>SPM Real Estate</title>
+	<meta property="og:title" content="SPM Real Estate">
+	<meta property="og:description" content="Описание">
+	<meta property="og:url" content="/">
+	<meta property="og:site_name" content="SPM Real Estate">
+	<!-- favicon -->
+	<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+	<link rel="manifest" href="img/favicon/site.webmanifest">
+	<link rel="mask-icon" href="img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+	<meta name="msapplication-TileColor" content="#000000">
+	<meta name="theme-color" content="#ffffff">
+	<!-- styles -->
+	<link rel="stylesheet" href="css/vendor.min.css">
+	<link rel="stylesheet" href="css/app.min.css">
+</head>
+
+<body>
+	<!-- new stats -->
+	<div class="new-stats" id="new-stats">
+		<div class="container">
+			<div class="new-stats-tabs">
+				<div class="new-stats-tabs__list">
+					<li class="new-stats-tabs__item is--active">
+						<button class="new-stats-tabs__tab">Общая статистика</button>
+					</li>
+					<li class="new-stats-tabs__item">
+						<button class="new-stats-tabs__tab">Динамика за период</button>
+					</li>
+					<li class="new-stats-tabs__item">
+						<button class="new-stats-tabs__tab">Сравнение по типам</button>
+					</li>
+				</div>
+				<div class="new-stats-tabs__wrapper is--active">
+					<div class="new-stats__block">
+						<div class="new-stats-filter">
+							<div class="new-stats-filter__wrapper">
+								<div class="new-stats-filter__group">
+									<span class="new-stats-filter__label">Метод подсчета средних значений:</span>
+									<div class="new-stats-filter__checkboxes-scroll">
+										<div class="new-stats-filter__checkboxes">
+											<div class="round-checkbox new-stats-filter__checkbox">
+												<input type="radio" class="round-checkbox__input" name="calculating-averages" id="calculating-averages-01" checked>
+												<label for="calculating-averages-01" class="round-checkbox__group">
+													<span class="round-checkbox__title">Медиана</span>
+												</label>
+											</div>
+											<div class="round-checkbox new-stats-filter__checkbox">
+												<input type="radio" class="round-checkbox__input" name="calculating-averages" id="calculating-averages-02">
+												<label for="calculating-averages-02" class="round-checkbox__group">
+													<span class="round-checkbox__title">Среднее арифметическое</span>
+												</label>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="new-stats-filter__group">
+									<div class="range-field new-stats-filter__range-input">
+										<div class="range-field__group">
+											<input type="text" class="range-field__input range-field__input--lg" placeholder="00.00.0000" data-inputmask="'mask': '99.99.9999'">
+										</div>
+										<div class="range-field__group">
+											<input type="text" class="range-field__input range-field__input--lg" placeholder="00.00.0000" data-inputmask="'mask': '99.99.9999'">
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="new-stats__block">
+						<div class="new-stats-data new-stats__data">
+							<form action="#" class="new-stats-data__form">
+								<div class="new-stats-data__inner">
+									<div class="new-stats-data__item">
+										<div class="new-stats-data__select default-select">
+											<select class="js-select">
+												<option data-placeholder="true">Город</option>
+												<option value="1">Москва</option>
+												<option value="2">Сочи</option>
+												<option value="3">Краснодар</option>
+											</select>
+										</div>
+									</div>
+									<div class="new-stats-data__item">
+										<div class="new-stats-data__select default-select">
+											<select class="js-select">
+												<option data-placeholder="true">Район</option>
+												<option value="1">Значение 1</option>
+												<option value="2">Значение 2</option>
+												<option value="3">Значение 3</option>
+											</select>
+										</div>
+									</div>
+									<div class="new-stats-data__item">
+										<div class="new-stats-data__select default-select">
+											<select class="js-select">
+												<option data-placeholder="true">Застройщик</option>
+												<option value="1">Значение 1</option>
+												<option value="2">Значение 2</option>
+												<option value="3">Значение 3</option>
+											</select>
+										</div>
+									</div>
+								</div>
+								<div class="new-stats-data__inner">
+									<div class="new-stats-data__item">
+										<div class="new-stats-data__select default-select">
+											<select class="js-select">
+												<option data-placeholder="true">Типы помещений</option>
+												<option value="1">Значение 1</option>
+												<option value="2">Значение 2</option>
+												<option value="3">Значение 3</option>
+											</select>
+										</div>
+									</div>
+									<div class="new-stats-data__item">
+										<div class="new-stats-data__select default-select">
+											<select class="js-select">
+												<option data-placeholder="true">Входит в стоимость</option>
+												<option value="1">Значение 1</option>
+												<option value="2">Значение 2</option>
+												<option value="3">Значение 3</option>
+											</select>
+										</div>
+									</div>
+									<div class="new-stats-data__item">
+										<div class="new-stats-data__select default-select">
+											<select class="js-select">
+												<option data-placeholder="true">Инфраструктура</option>
+												<option value="1">Значение 1</option>
+												<option value="2">Значение 2</option>
+												<option value="3">Значение 3</option>
+											</select>
+										</div>
+									</div>
+								</div>
+								<div class="new-stats-data__inner">
+									<div class="new-stats-data__item new-stats-data__item--min-width">
+										<span class="new-stats-data__label">Количество комнат</span>
+										<div class="new-stats-data__checkboxes">
+											<div class="circle-checkbox new-stats-data__checkbox">
+												<input type="radio" class="circle-checkbox__input" name="number-rooms" id="number-rooms-01">
+												<label for="number-rooms-01" class="circle-checkbox__group">
+													<span class="circle-checkbox__title">1</span>
+												</label>
+											</div>
+											<div class="circle-checkbox new-stats-data__checkbox">
+												<input type="radio" class="circle-checkbox__input" name="number-rooms" id="number-rooms-02">
+												<label for="number-rooms-02" class="circle-checkbox__group">
+													<span class="circle-checkbox__title">2</span>
+												</label>
+											</div>
+											<div class="circle-checkbox new-stats-data__checkbox">
+												<input type="radio" class="circle-checkbox__input" name="number-rooms" id="number-rooms-03">
+												<label for="number-rooms-03" class="circle-checkbox__group">
+													<span class="circle-checkbox__title">3</span>
+												</label>
+											</div>
+											<div class="circle-checkbox new-stats-data__checkbox">
+												<input type="radio" class="circle-checkbox__input" name="number-rooms" id="number-rooms-04">
+												<label for="number-rooms-04" class="circle-checkbox__group">
+													<span class="circle-checkbox__title">4</span>
+												</label>
+											</div>
+											<div class="circle-checkbox new-stats-data__checkbox">
+												<input type="radio" class="circle-checkbox__input" name="number-rooms" id="number-rooms-05">
+												<label for="number-rooms-05" class="circle-checkbox__group">
+													<span class="circle-checkbox__title">5+</span>
+												</label>
+											</div>
+										</div>
+									</div>
+									<div class="new-stats-data__item">
+										<span class="new-stats-data__label">Площадь, м²</span>
+										<div class="new-stats-data__range">
+											<div class="new-stats-data__range-inner">
+												<div class="range-field new-stats-data__range-input">
+													<div class="range-field__group">
+														<input type="number" id="range-square-min" class="range-field__input range-field__input--min" placeholder="0">
+													</div>
+													<div class="range-field__group">
+														<input type="number" id="range-square-max" class="range-field__input range-field__input--max" placeholder="235">
+													</div>
+												</div>
+											</div>
+											<div class="new-stats-data__range-slider" data-range-start="35" data-range-end="200" data-range-min="0" data-range-max="235"></div>
+										</div>
+									</div>
+									<div class="new-stats-data__item">
+										<span class="new-stats-data__label">Общая стоимость, ₽</span>
+										<div class="new-stats-data__range">
+											<div class="new-stats-data__range-inner">
+												<div class="range-field new-stats-data__range-input">
+													<div class="range-field__group">
+														<input type="number" id="range-price-min" class="range-field__input range-field__input--min" placeholder="0">
+													</div>
+													<div class="range-field__group">
+														<input type="number" id="range-price-max" class="range-field__input range-field__input--max" placeholder="2000000">
+													</div>
+												</div>
+											</div>
+											<div class="new-stats-data__range-slider" data-range-start="0" data-range-end="2000000" data-range-min="0" data-range-max="8000000"></div>
+										</div>
+									</div>
+									<div class="new-stats-data__item">
+										<span class="new-stats-data__label">Цена за м² </span>
+										<div class="new-stats-data__range">
+											<div class="new-stats-data__range-inner">
+												<div class="range-field new-stats-data__range-input">
+													<div class="range-field__group">
+														<input type="number" id="range-price-square-min" class="range-field__input range-field__input--min" placeholder="0">
+													</div>
+													<div class="range-field__group">
+														<input type="number" id="range-price-square-max" class="range-field__input range-field__input--max" placeholder="2000000">
+													</div>
+												</div>
+											</div>
+											<div class="new-stats-data__range-slider" data-range-start="0" data-range-end="2000000" data-range-min="0" data-range-max="8000000"></div>
+										</div>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+					<div class="new-stats__block">
+						<div class="new-stats__head">
+							<h2 class="new-stats__heading">Общая информация</h2>
+						</div>
+						<div class="new-stats-objects new-stats__objects">
+							<div class="new-stats-objects__wrapper">
+								<div class="new-stats-objects__item">
+									<picture class="new-stats-objects__img">
+										<img src="img/new-stats-objects-01.svg" alt="Icon">
+									</picture>
+									<div class="new-stats-objects__body">
+										<span class="new-stats-objects__help">Всего объектов в базе</span>
+										<span class="new-stats-objects__value">7 456</span>
+									</div>
+								</div>
+								<div class="new-stats-objects__item">
+									<picture class="new-stats-objects__img" style="background: #EE98BA;">
+										<img src="img/new-stats-objects-02.svg" alt="Icon">
+									</picture>
+									<div class="new-stats-objects__body">
+										<span class="new-stats-objects__help">Общая стоимость объектов</span>
+										<span class="new-stats-objects__value">4 856 855 000 €</span>
+									</div>
+								</div>
+								<div class="new-stats-objects__item">
+									<picture class="new-stats-objects__img" style="background: #9DDFE0;">
+										<img src="img/new-stats-objects-03.svg" alt="Icon">
+									</picture>
+									<div class="new-stats-objects__body">
+										<span class="new-stats-objects__help">Общая площадь</span>
+										<span class="new-stats-objects__value">1 856 855 м²</span>
+									</div>
+								</div>
+								<div class="new-stats-objects__item">
+									<picture class="new-stats-objects__img" style="background: #AAA7F8;">
+										<img src="img/new-stats-objects-04.svg" alt="Icon">
+									</picture>
+									<div class="new-stats-objects__body">
+										<span class="new-stats-objects__help">Общая жилая площадь</span>
+										<span class="new-stats-objects__value">956 855 м²</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="new-stats-values new-stats__values">
+							<div class="new-stats-values__wrapper">
+								<div class="new-stats-values__item">
+									<div class="new-stats-values__inner">
+										<span class="new-stats-values__help">Средняя <br>стоимость объекта</span>
+										<picture class="new-stats-values__icon">
+											<img src="img/new-stats-values-01.svg" alt="Icon">
+										</picture>
+									</div>
+									<span class="new-stats-values__value">652 540 €</span>
+								</div>
+								<div class="new-stats-values__item">
+									<div class="new-stats-values__inner">
+										<span class="new-stats-values__help">Средняя <br>стоимость, м²</span>
+										<picture class="new-stats-values__icon">
+											<img src="img/new-stats-values-02.svg" alt="Icon">
+										</picture>
+									</div>
+									<span class="new-stats-values__value">2 540 €/м²</span>
+								</div>
+								<div class="new-stats-values__item">
+									<div class="new-stats-values__inner">
+										<span class="new-stats-values__help">Средняя <br>площадь</span>
+										<picture class="new-stats-values__icon">
+											<img src="img/new-stats-values-03.svg" alt="Icon">
+										</picture>
+									</div>
+									<span class="new-stats-values__value">164,5 м²</span>
+								</div>
+								<div class="new-stats-values__item">
+									<div class="new-stats-values__inner">
+										<span class="new-stats-values__help">Средняя <br>жилая площадь</span>
+										<picture class="new-stats-values__icon">
+											<img src="img/new-stats-values-04.svg" alt="Icon">
+										</picture>
+									</div>
+									<span class="new-stats-values__value">164,5 м²</span>
+								</div>
+								<div class="new-stats-values__item">
+									<div class="new-stats-values__inner">
+										<span class="new-stats-values__help">Средняя <br>этажность</span>
+										<picture class="new-stats-values__icon">
+											<img src="img/new-stats-values-05.svg" alt="Icon">
+										</picture>
+									</div>
+									<span class="new-stats-values__value">5,2</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="new-stats__block">
+						<div class="new-stats__head">
+							<h2 class="new-stats__heading">Прогнозы сдачи объектов</h2>
+						</div>
+						<canvas class="new-stats__canvas" id="forecasts" width="200" height="200"></canvas>
+					</div>
+					<div class="new-stats__block">
+						<div class="new-stats__head">
+							<h2 class="new-stats__heading">Сравнение диапазонов дат</h2>
+							<div class="range-field new-stats__range-input">
+								<div class="range-field__group">
+									<input type="text" class="range-field__input range-field__input--lg" placeholder="00.00.0000" data-inputmask="'mask': '99.99.9999'">
+								</div>
+								<div class="range-field__group">
+									<input type="text" class="range-field__input range-field__input--lg" placeholder="00.00.0000" data-inputmask="'mask': '99.99.9999'">
+								</div>
+							</div>
+						</div>
+						<div class="new-stats-date-ranges">
+							<div class="new-stats-date-ranges__wrapper">
+								<div class="new-stats-date-ranges__item">
+									<div class="new-stats-date-ranges__top">
+										<h3 class="new-stats-date-ranges__title">Изменения динамики добавления объектов</h3>
+									</div>
+									<div class="new-stats-date-ranges__main">
+										<span class="new-stats-date-ranges__value">+26%</span>
+										<picture class="new-stats-date-ranges__img">
+											<img src="img/date-range-up.svg" alt="Image">
+										</picture>
+									</div>
+								</div>
+								<div class="new-stats-date-ranges__item">
+									<div class="new-stats-date-ranges__top">
+										<h3 class="new-stats-date-ranges__title">Изменение динамики проданных объектов</h3>
+									</div>
+									<div class="new-stats-date-ranges__main">
+										<span class="new-stats-date-ranges__value">+14%</span>
+										<picture class="new-stats-date-ranges__img">
+											<img src="img/date-range-up.svg" alt="Image">
+										</picture>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="new-stats__block">
+						<div class="new-stats__head">
+							<h2 class="new-stats__heading">Дополнительная инфомация</h2>
+						</div>
+						<div class="new-stats-types new-stats__types">
+							<div class="new-stats-types__wrapper">
+								<div class="new-stats-types__item">
+									<div class="new-stats-types__top">
+										<span class="new-stats-types__title">
+											<span>Спортзалы в объектах</span>
+										</span>
+										<span class="new-stats-types__value">1% = 100 объектов</span>
+									</div>
+									<div class="new-stats-types__main">
+										<div class="new-stats-types__left">
+											<canvas class="new-stats-types__canvas" id="gyms-facilities" width="200" height="200"></canvas>
+										</div>
+										<div class="new-stats-types__right">
+											<div id="gyms-legend"></div>
+										</div>
+									</div>
+								</div>
+								<div class="new-stats-types__item">
+									<div class="new-stats-types__top">
+										<span class="new-stats-types__title">
+											<span>Бассейны в объектах</span>
+										</span>
+										<span class="new-stats-types__value">1% = 100 объектов</span>
+									</div>
+									<div class="new-stats-types__main">
+										<div class="new-stats-types__left">
+											<canvas class="new-stats-types__canvas" id="swimming-pools-facilities" width="200" height="200"></canvas>
+										</div>
+										<div class="new-stats-types__right">
+											<div id="swimming-pools-legend"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="new-stats-tabs__wrapper">
+					<div class="new-stats__block">
+						<div class="new-stats-filter">
+							<div class="new-stats-filter__wrapper">
+								<div class="new-stats-filter__group">
+									<span class="new-stats-filter__label">Метод подсчета средних значений:</span>
+									<div class="new-stats-filter__checkboxes-scroll">
+										<div class="new-stats-filter__checkboxes">
+											<div class="round-checkbox new-stats-filter__checkbox">
+												<input type="radio" class="round-checkbox__input" name="calculating-averages-1" id="calculating-averages-11" checked>
+												<label for="calculating-averages-11" class="round-checkbox__group">
+													<span class="round-checkbox__title">Медиана</span>
+												</label>
+											</div>
+											<div class="round-checkbox new-stats-filter__checkbox">
+												<input type="radio" class="round-checkbox__input" name="calculating-averages-1" id="calculating-averages-12">
+												<label for="calculating-averages-12" class="round-checkbox__group">
+													<span class="round-checkbox__title">Среднее арифметическое</span>
+												</label>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="new-stats-filter__group">
+									<div class="range-field new-stats-filter__range-input">
+										<div class="range-field__group">
+											<input type="text" class="range-field__input range-field__input--lg" placeholder="00.00.0000" data-inputmask="'mask': '99.99.9999'">
+										</div>
+										<div class="range-field__group">
+											<input type="text" class="range-field__input range-field__input--lg" placeholder="00.00.0000" data-inputmask="'mask': '99.99.9999'">
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="new-stats__block">
+						<div class="new-stats-data new-stats__data">
+							<form action="#" class="new-stats-data__form">
+								<div class="new-stats-data__inner">
+									<div class="new-stats-data__item">
+										<div class="new-stats-data__select default-select">
+											<select class="js-select">
+												<option data-placeholder="true">Город</option>
+												<option value="1">Москва</option>
+												<option value="2">Сочи</option>
+												<option value="3">Краснодар</option>
+											</select>
+										</div>
+									</div>
+									<div class="new-stats-data__item">
+										<div class="new-stats-data__select default-select">
+											<select class="js-select">
+												<option data-placeholder="true">Район</option>
+												<option value="1">Значение 1</option>
+												<option value="2">Значение 2</option>
+												<option value="3">Значение 3</option>
+											</select>
+										</div>
+									</div>
+									<div class="new-stats-data__item">
+										<div class="new-stats-data__select default-select">
+											<select class="js-select">
+												<option data-placeholder="true">Застройщик</option>
+												<option value="1">Значение 1</option>
+												<option value="2">Значение 2</option>
+												<option value="3">Значение 3</option>
+											</select>
+										</div>
+									</div>
+								</div>
+								<div class="new-stats-data__inner">
+									<div class="new-stats-data__item">
+										<div class="new-stats-data__select default-select">
+											<select class="js-select">
+												<option data-placeholder="true">Типы помещений</option>
+												<option value="1">Значение 1</option>
+												<option value="2">Значение 2</option>
+												<option value="3">Значение 3</option>
+											</select>
+										</div>
+									</div>
+									<div class="new-stats-data__item">
+										<div class="new-stats-data__select default-select">
+											<select class="js-select">
+												<option data-placeholder="true">Входит в стоимость</option>
+												<option value="1">Значение 1</option>
+												<option value="2">Значение 2</option>
+												<option value="3">Значение 3</option>
+											</select>
+										</div>
+									</div>
+									<div class="new-stats-data__item">
+										<div class="new-stats-data__select default-select">
+											<select class="js-select">
+												<option data-placeholder="true">Инфраструктура</option>
+												<option value="1">Значение 1</option>
+												<option value="2">Значение 2</option>
+												<option value="3">Значение 3</option>
+											</select>
+										</div>
+									</div>
+								</div>
+								<div class="new-stats-data__inner">
+									<div class="new-stats-data__item new-stats-data__item--min-width">
+										<span class="new-stats-data__label">Количество комнат</span>
+										<div class="new-stats-data__checkboxes">
+											<div class="circle-checkbox new-stats-data__checkbox">
+												<input type="radio" class="circle-checkbox__input" name="number-rooms" id="number-rooms-01">
+												<label for="number-rooms-01" class="circle-checkbox__group">
+													<span class="circle-checkbox__title">1</span>
+												</label>
+											</div>
+											<div class="circle-checkbox new-stats-data__checkbox">
+												<input type="radio" class="circle-checkbox__input" name="number-rooms" id="number-rooms-02">
+												<label for="number-rooms-02" class="circle-checkbox__group">
+													<span class="circle-checkbox__title">2</span>
+												</label>
+											</div>
+											<div class="circle-checkbox new-stats-data__checkbox">
+												<input type="radio" class="circle-checkbox__input" name="number-rooms" id="number-rooms-03">
+												<label for="number-rooms-03" class="circle-checkbox__group">
+													<span class="circle-checkbox__title">3</span>
+												</label>
+											</div>
+											<div class="circle-checkbox new-stats-data__checkbox">
+												<input type="radio" class="circle-checkbox__input" name="number-rooms" id="number-rooms-04">
+												<label for="number-rooms-04" class="circle-checkbox__group">
+													<span class="circle-checkbox__title">4</span>
+												</label>
+											</div>
+											<div class="circle-checkbox new-stats-data__checkbox">
+												<input type="radio" class="circle-checkbox__input" name="number-rooms" id="number-rooms-05">
+												<label for="number-rooms-05" class="circle-checkbox__group">
+													<span class="circle-checkbox__title">5+</span>
+												</label>
+											</div>
+										</div>
+									</div>
+									<div class="new-stats-data__item">
+										<span class="new-stats-data__label">Площадь, м²</span>
+										<div class="new-stats-data__range">
+											<div class="new-stats-data__range-inner">
+												<div class="range-field new-stats-data__range-input">
+													<div class="range-field__group">
+														<input type="number" id="range-square-min" class="range-field__input range-field__input--min" placeholder="0">
+													</div>
+													<div class="range-field__group">
+														<input type="number" id="range-square-max" class="range-field__input range-field__input--max" placeholder="235">
+													</div>
+												</div>
+											</div>
+											<div class="new-stats-data__range-slider" data-range-start="35" data-range-end="200" data-range-min="0" data-range-max="235"></div>
+										</div>
+									</div>
+									<div class="new-stats-data__item">
+										<span class="new-stats-data__label">Общая стоимость, ₽</span>
+										<div class="new-stats-data__range">
+											<div class="new-stats-data__range-inner">
+												<div class="range-field new-stats-data__range-input">
+													<div class="range-field__group">
+														<input type="number" id="range-price-min" class="range-field__input range-field__input--min" placeholder="0">
+													</div>
+													<div class="range-field__group">
+														<input type="number" id="range-price-max" class="range-field__input range-field__input--max" placeholder="2000000">
+													</div>
+												</div>
+											</div>
+											<div class="new-stats-data__range-slider" data-range-start="0" data-range-end="2000000" data-range-min="0" data-range-max="8000000"></div>
+										</div>
+									</div>
+									<div class="new-stats-data__item">
+										<span class="new-stats-data__label">Цена за м² </span>
+										<div class="new-stats-data__range">
+											<div class="new-stats-data__range-inner">
+												<div class="range-field new-stats-data__range-input">
+													<div class="range-field__group">
+														<input type="number" id="range-price-square-min" class="range-field__input range-field__input--min" placeholder="0">
+													</div>
+													<div class="range-field__group">
+														<input type="number" id="range-price-square-max" class="range-field__input range-field__input--max" placeholder="2000000">
+													</div>
+												</div>
+											</div>
+											<div class="new-stats-data__range-slider" data-range-start="0" data-range-end="2000000" data-range-min="0" data-range-max="8000000"></div>
+										</div>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+					<div class="new-stats__block">
+						<div class="new-stats__head">
+							<h2 class="new-stats__heading">Общая информация</h2>
+						</div>
+						<div class="new-stats-info new-stats__info">
+							<div class="new-stats-info__wrapper">
+								<div class="new-stats-info__item">
+									<span class="new-stats-info__help">Добавлено проектов</span>
+									<div class="new-stats-info__inner">
+										<span class="new-stats-info__value">280</span>
+										<span class="new-stats-info__percent">
+											<img src="img/icon-arrow-up.svg" alt="Icon">
+											<span>12.2%</span>
+										</span>
+									</div>
+								</div>
+								<div class="new-stats-info__item">
+									<span class="new-stats-info__help">Продано проектов</span>
+									<div class="new-stats-info__inner">
+										<span class="new-stats-info__value">1 240</span>
+										<span class="new-stats-info__percent">
+											<img src="img/icon-arrow-up.svg" alt="Icon">
+											<span>12.2%</span>
+										</span>
+									</div>
+								</div>
+								<div class="new-stats-info__item">
+									<span class="new-stats-info__help">Сумма добавленных проектов</span>
+									<div class="new-stats-info__inner">
+										<span class="new-stats-info__value">7 450 500 €</span>
+										<span class="new-stats-info__percent new-stats-info__percent--down">
+											<img src="img/icon-arrow-down.svg" alt="Icon">
+											<span>12.2%</span>
+										</span>
+									</div>
+								</div>
+								<div class="new-stats-info__item">
+									<span class="new-stats-info__help">Сумма проданных объектов</span>
+									<div class="new-stats-info__inner">
+										<span class="new-stats-info__value">36 250 800 €</span>
+										<span class="new-stats-info__percent">
+											<img src="img/icon-arrow-up.svg" alt="Icon">
+											<span>12.2%</span>
+										</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="new-stats-prices new-stats__prices">
+							<div class="new-stats-prices__wrapper">
+								<div class="new-stats-prices__item">
+									<div class="new-stats-prices__group new-stats-prices__group--info">
+										<picture class="new-stats-prices__img">
+											<img src="img/new-stats-objects-02.svg" alt="Icon">
+										</picture>
+										<div class="new-stats-prices__help">Изменение средней <br>цены объекта</div>
+									</div>
+									<div class="new-stats-prices__group">
+										<span class="new-stats-prices__value">+26%</span>
+									</div>
+								</div>
+								<div class="new-stats-prices__item">
+									<div class="new-stats-prices__group">
+										<span class="new-stats-prices__value">+14%</span>
+									</div>
+									<div class="new-stats-prices__group new-stats-prices__group--info">
+										<picture class="new-stats-prices__img">
+											<img src="img/new-stats-objects-05.svg" alt="Icon">
+										</picture>
+										<div class="new-stats-prices__help">Изменение средней <br>цены м²</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="new-stats-tabs__wrapper">
+					<div class="new-stats__block">
+						<div class="new-stats-filter">
+							<div class="new-stats-filter__wrapper">
+								<div class="new-stats-filter__group">
+									<span class="new-stats-filter__label">Метод подсчета средних значений:</span>
+									<div class="new-stats-filter__checkboxes-scroll">
+										<div class="new-stats-filter__checkboxes">
+											<div class="round-checkbox new-stats-filter__checkbox">
+												<input type="radio" class="round-checkbox__input" name="calculating-averages-2" id="calculating-averages-21" checked>
+												<label for="calculating-averages-21" class="round-checkbox__group">
+													<span class="round-checkbox__title">Медиана</span>
+												</label>
+											</div>
+											<div class="round-checkbox new-stats-filter__checkbox">
+												<input type="radio" class="round-checkbox__input" name="calculating-averages-2" id="calculating-averages-22">
+												<label for="calculating-averages-22" class="round-checkbox__group">
+													<span class="round-checkbox__title">Среднее арифметическое</span>
+												</label>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="new-stats-filter__group">
+									<div class="range-field new-stats-filter__range-input">
+										<div class="range-field__group">
+											<input type="text" class="range-field__input range-field__input--lg" placeholder="00.00.0000" data-inputmask="'mask': '99.99.9999'">
+										</div>
+										<div class="range-field__group">
+											<input type="text" class="range-field__input range-field__input--lg" placeholder="00.00.0000" data-inputmask="'mask': '99.99.9999'">
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="new-stats__block">
+						<div class="new-stats-types new-stats__types">
+							<div class="new-stats-types__wrapper">
+								<div class="new-stats-types__item">
+									<div class="new-stats-types__top">
+										<span class="new-stats-types__title">
+											<img src="img/icon-home.svg" alt="Icon">
+											<span>Типы новой недвижимости</span>
+										</span>
+										<span class="new-stats-types__value">1% = 100 объектов</span>
+									</div>
+									<div class="new-stats-types__main">
+										<div class="new-stats-types__left">
+											<canvas class="new-stats-types__canvas" id="type-new-estate" width="200" height="200"></canvas>
+										</div>
+										<div class="new-stats-types__right">
+											<div id="type-new-estate-legend"></div>
+										</div>
+									</div>
+								</div>
+								<div class="new-stats-types__item">
+									<div class="new-stats-types__top">
+										<span class="new-stats-types__title">
+											<img src="img/icon-home.svg" alt="Icon">
+											<span>Типы проданной недвижимости</span>
+										</span>
+										<span class="new-stats-types__value">1% = 100 объектов</span>
+									</div>
+									<div class="new-stats-types__main">
+										<div class="new-stats-types__left">
+											<canvas class="new-stats-types__canvas" id="type-sell-estate" width="200" height="200"></canvas>
+										</div>
+										<div class="new-stats-types__right">
+											<div id="type-sell-estate-legend"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end of new stats -->
+	<!-- scripts -->
+	<script src="js/vendor.min.js"></script>
+	<script src="js/app.min.js"></script>
+</body>
+
+</html>
