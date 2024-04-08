@@ -10,14 +10,6 @@
 	<meta property="og:description" content="Описание">
 	<meta property="og:url" content="/">
 	<meta property="og:site_name" content="SPM Real Estate">
-	<!-- favicon -->
-	<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
-	<link rel="manifest" href="img/favicon/site.webmanifest">
-	<link rel="mask-icon" href="img/favicon/safari-pinned-tab.svg" color="#5bbad5">
-	<meta name="msapplication-TileColor" content="#000000">
-	<meta name="theme-color" content="#ffffff">
 	<!-- styles -->
 	<link rel="stylesheet" href="css/vendor.min.css">
 	<link rel="stylesheet" href="css/app.min.css">
@@ -672,6 +664,44 @@
 											<img src="img/new-stats-objects-05.svg" alt="Icon">
 										</picture>
 										<div class="new-stats-prices__help">Изменение средней <br>цены м²</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="new-stats__block">
+						<div class="new-stats__head">
+							<h2 class="new-stats__heading">Графики динамики</h2>
+						</div>
+						<div class="new-stats-dynamics">
+							<div class="new-stats-dynamics__wrapper">
+								<div class="new-stats-dynamics__item">
+									<div class="new-stats-dynamics__top">
+										<h3 class="new-stats-dynamics__title">Объекты</h3>
+										<div id="new-objects-legend" class="new-stats-dynamics__legend"></div>
+									</div>
+									<div class="new-stats-dynamics__main">
+										<canvas class="new-stats-dynamics__canvas" id="new-objects" width="600" height="261"></canvas>
+									</div>
+								</div>
+							</div>
+							<div class="new-stats-dynamics__wrapper">
+								<div class="new-stats-dynamics__item">
+									<div class="new-stats-dynamics__top">
+										<h3 class="new-stats-dynamics__title">Новые проекты</h3>
+										<div id="new-projects-legend" class="new-stats-dynamics__legend"></div>
+									</div>
+									<div class="new-stats-dynamics__main">
+										<canvas class="new-stats-dynamics__canvas" id="new-projects" width="600" height="261"></canvas>
+									</div>
+								</div>
+								<div class="new-stats-dynamics__item">
+									<div class="new-stats-dynamics__top">
+										<h3 class="new-stats-dynamics__title">Проданные проекты</h3>
+										<div id="sell-projects-legend" class="new-stats-dynamics__legend"></div>
+									</div>
+									<div class="new-stats-dynamics__main">
+										<canvas class="new-stats-dynamics__canvas" id="sell-projects" width="600" height="261"></canvas>
 									</div>
 								</div>
 							</div>
