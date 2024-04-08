@@ -519,6 +519,11 @@ svg {
 .new-stats__prices {
   margin-top: 10px;
 }
+.new-stats__canvas {
+  max-height: 450px !important;
+  width: 100% !important;
+  height: auto !important;
+}
 
 .new-stats-tabs__list {
   display: -webkit-box;
